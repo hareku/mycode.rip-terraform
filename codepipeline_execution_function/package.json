@@ -1,0 +1,10 @@
+{
+  "name": "codepipeline_execution_function",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "hareku",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.307.0"
+  }
+}
