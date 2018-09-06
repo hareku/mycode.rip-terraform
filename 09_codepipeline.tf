@@ -57,7 +57,7 @@ resource "aws_codepipeline" "application" {
       configuration {
         Owner                = "hareku"
         Repo                 = "mycode.rip"
-        Branch               = "develop"
+        Branch               = "master"
         PollForSourceChanges = "true"
       }
     }
