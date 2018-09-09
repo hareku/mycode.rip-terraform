@@ -81,8 +81,8 @@ resource "aws_cloudfront_distribution" "this" {
     }
 
     min_ttl     = 0
-    default_ttl = 24 * 60 * 60
-    max_ttl     = 7 * 24 * 60 * 60
+    default_ttl = "${24 * 60 * 60}"
+    max_ttl     = "${7 * 24 * 60 * 60}"
     compress    = true
   }
 }
