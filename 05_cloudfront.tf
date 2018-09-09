@@ -27,10 +27,12 @@ resource "aws_cloudfront_distribution" "this" {
     }
   }
 
-  # custom_error_response {
-  #   error_caching_min_ttl = 300
-  #   error_code            = 404
-  # }
+  custom_error_response {
+    error_caching_min_ttl = 300
+    error_code            = 403
+    response_code         = 404
+    response_page_path    = "/404.html"
+  }
 
   viewer_certificate {
     acm_certificate_arn      = "${aws_acm_certificate.cloudfront.arn}"
