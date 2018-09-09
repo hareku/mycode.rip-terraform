@@ -18,9 +18,10 @@ resource "aws_route53_record" "this" {
 }
 
 resource "aws_route53_record" "acm" {
+  count   = "${length(aws_acm_certificate.cloudfront.domain_validation_options)}"
   zone_id = "${aws_route53_zone.this.zone_id}"
-  name    = "_cea5edc985c105e7d957c00ef484ff0e.mycode.rip."
-  type    = "CNAME"
+  name    = "${lookup(aws_acm_certificate.cloudfront.domain_validation_options[count.index],"resource_record_name")}"
+  type    = "${lookup(aws_acm_certificate.cloudfront.domain_validation_options[count.index],"resource_record_type")}"
   ttl     = "300"
-  records = ["_b6073db9c0c4de771e725f92e02ef632.tljzshvwok.acm-validations.aws."]
+  records = ["${lookup(aws_acm_certificate.cloudfront.domain_validation_options[count.index],"resource_record_value")}"]
 }
