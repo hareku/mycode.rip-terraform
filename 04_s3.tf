@@ -10,6 +10,21 @@ resource "aws_s3_bucket" "this" {
     index_document = "index.html"
     error_document = "404.html"
   }
+
+  lifecycle_rule {
+    id      = "delete-old-version"
+    enabled = true
+
+    tags = {
+      ShouldDelete = 1
+    }
+
+    expiration {
+      days = 2
+    }
+  }
+}
+
 }
 
 data "aws_iam_policy_document" "s3" {
