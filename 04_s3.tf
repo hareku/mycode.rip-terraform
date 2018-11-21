@@ -25,8 +25,6 @@ resource "aws_s3_bucket" "this" {
   }
 }
 
-}
-
 data "aws_iam_policy_document" "s3" {
   statement {
     sid       = "PublicReadForGetBucketObjects"
