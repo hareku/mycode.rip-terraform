@@ -25,7 +25,7 @@ resource "aws_codebuild_project" "application" {
 
   environment {
     compute_type    = "BUILD_GENERAL1_SMALL"
-    image           = "aws/codebuild/nodejs:8.11.0"
+    image           = "aws/codebuild/nodejs:10.14.1"
     type            = "LINUX_CONTAINER"
     privileged_mode = true
   }
