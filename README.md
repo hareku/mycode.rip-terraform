@@ -1,5 +1,5 @@
-# Terraform project for Nuxt.js + Contentful Blog
+# Terraform project for mycode.rip
 
-- Blog: https://mycode.rip/
-- mycode.rip(Nuxt.js + Contentful): https://github.com/hareku/mycode.rip
-- Qiita: https://qiita.com/hareku/items/acd9dfe5d77293a4a6d9
+**Note: This repository is archived because my blog's infrastructure was moved to Vercel.**
+
+[mycode.rip](https://mycode.rip/) is my blog. This terraform project creates AWS resources for the infrastructure of my blog.
